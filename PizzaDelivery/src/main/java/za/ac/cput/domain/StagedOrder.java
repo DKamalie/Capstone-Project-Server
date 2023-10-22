@@ -32,9 +32,9 @@ public class StagedOrder {
     private Pizza pizza;
     private double total;
     private OrderStatus orderStatus;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pizzeriaID", referencedColumnName = "pizzeriaID")
-    private Pizzeria pizzeria;
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "pizzeriaID", referencedColumnName = "pizzeriaID")
+//    private Pizzeria pizzeria;
 
     protected StagedOrder(){
 
@@ -46,7 +46,7 @@ public class StagedOrder {
         this.time = builder.time;
         this.customer = builder.customer;
         this.orderStatus = builder.orderStatus;
-        this.pizzeria = builder.pizzeria;
+//        this.pizzeria = builder.pizzeria;
         this.quantity = builder.quantity;
         this.pizza = builder.pizza;
         this.total = builder.total;
@@ -81,9 +81,9 @@ public class StagedOrder {
         return orderStatus;
     }
 
-    public Pizzeria getPizzeria() {
-        return pizzeria;
-    }
+//    public Pizzeria getPizzeria() {
+//        return pizzeria;
+//    }
 
     public static class Builder {
         private Integer orderId;
@@ -94,7 +94,7 @@ public class StagedOrder {
         private Pizza pizza;
         private double total;
         private OrderStatus orderStatus;
-        private Pizzeria pizzeria;
+//        private Pizzeria pizzeria;
 
         public Builder setOrderId(Integer orderId) {
             this.orderId = orderId;
@@ -135,10 +135,10 @@ public class StagedOrder {
             return this;
         }
 
-        public Builder setPizzeria(Pizzeria pizzeria) {
-            this.pizzeria = pizzeria;
-            return this;
-        }
+//        public Builder setPizzeria(Pizzeria pizzeria) {
+//            this.pizzeria = pizzeria;
+//            return this;
+//        }
 
         public Builder copy(StagedOrder order) {
             this.orderId = order.orderId;
@@ -147,7 +147,7 @@ public class StagedOrder {
             this.customer = order.customer;
             this.total = order.total;
             this.orderStatus = order.orderStatus;
-            this.pizzeria = order.pizzeria;
+//            this.pizzeria = order.pizzeria;
             this.quantity = order.quantity;
             return this;
         }
@@ -160,7 +160,7 @@ public class StagedOrder {
 
     @Override
     public int hashCode() {
-        return Objects.hash(orderId, createDate, time, customer, orderStatus, pizzeria);
+        return Objects.hash(orderId, createDate, time, customer, orderStatus);
     }
 
     @Override
@@ -174,7 +174,6 @@ public class StagedOrder {
                 ", pizza=" + pizza +
                 ", total=" + total +
                 ", orderStatus=" + orderStatus +
-                ", pizzeria=" + pizzeria +
                 '}';
     }
 }
