@@ -25,6 +25,7 @@ public class LoyaltyCustomerServiceImplTest {
     private LoyaltyCustomerServiceImpl service;
 
     private static Address address = AddressFactory.buildAddress("10", "Long Street", "West Side", "Sandy Shores", "California", "Georgia", "9274", AddressType.RESIDENTIAL_HOME);
+    private static Address address2 = AddressFactory.buildAddress("11", "Long Street", "West Side", "Sandy Shores", "California", "Georgia", "9274", AddressType.RESIDENTIAL_HOME);
     private static LocalDate date = LocalDate.now();
     private static LoyaltyCustomer lc1 = LoyaltyCustomerFactory.createLoyaltyCustomer(
             "Keenan",
@@ -39,7 +40,7 @@ public class LoyaltyCustomerServiceImplTest {
             "Wendy",
             "Nelson",
             "037-903-0924",
-            address,
+            address2,
             date,
             30.0,
             "1234567892",
